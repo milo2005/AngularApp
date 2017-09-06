@@ -1,5 +1,4 @@
-import { selector } from 'rxjs/operator/publish';
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Pelicula } from '../shared/pelicula.model';
 
 @Component({
@@ -10,5 +9,11 @@ import { Pelicula } from '../shared/pelicula.model';
 export class PeliculaCardComponent {
 
   @Input() pelicula: Pelicula;
+  @Input() index: number;
+  @Output() reserva: EventEmitter<number> = new EventEmitter<number>();
+
+  reservar() {
+    this.reserva.emit(this.index);
+  }
 
 }

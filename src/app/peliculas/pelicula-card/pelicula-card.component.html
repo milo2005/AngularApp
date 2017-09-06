@@ -1,8 +1,10 @@
-<div class="card">
+<div class="card" (click)="reservar()">
     <img src="{{pelicula.imagen}}" alt="">
     <div class="content">
         <h3>{{pelicula.nombre}}</h3>
         <p><span class="label">Duración</span> {{pelicula.duracion}}min</p>
-        <p><span class="label">Estreno</span> {{pelicula.estreno}}</p>
+        <p *ngIf="pelicula.estreno != null">
+            <span class="label">Estreno</span> {{pelicula.estreno| date:'shortDate'}}
+        </p>
     </div>
 </div>

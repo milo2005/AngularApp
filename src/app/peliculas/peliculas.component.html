@@ -1,2 +1,3 @@
 <app-toolbar [title]="title"></app-toolbar>
-<app-card *ngFor="let p of peliculas" [pelicula]="p"></app-card>
+<app-card *ngFor="let p of peliculas; index as i" [pelicula]="p" 
+        [index]="i" (reserva)="peliculaReservada($event)"></app-card>

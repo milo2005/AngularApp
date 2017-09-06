@@ -15,4 +15,8 @@ export class PeliculasComponent {
         this.peliculas = service.data;
     }
 
+    peliculaReservada(index: number) {
+        alert('Reservaste ' + this.peliculas[index].nombre);
+    }
+
 }
