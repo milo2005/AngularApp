@@ -1,8 +1,14 @@
-import { Component } from '@angular/core';
+import { selector } from 'rxjs/operator/publish';
+import { Component, Input } from '@angular/core';
+import { Pelicula } from '../shared/pelicula.model';
 
 @Component({
-  templateUrl: './pelicula-card.component.html'
+  selector: 'app-card',
+  templateUrl: './pelicula-card.component.html',
+  styleUrls: ['./pelicula-card.component.css']
 })
 export class PeliculaCardComponent {
+
+  @Input() pelicula: Pelicula;
 
 }
